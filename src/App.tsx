@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Contact from './views/Contact'
+import ContactDetail from './views/ContactDetail'
+import ContactAdd from './views/ContactAdd'
+import Layout from './components/Layout'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = (): JSX.Element => (
+  <Layout>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Contact />} />
+        <Route path="/contacts/:id" element={<ContactDetail />} />
+        <Route path="/contacts/add" element={<ContactAdd />} />
+      </Routes>
+    </Router>
+  </Layout>
+)
 
-export default App;
+export default App
