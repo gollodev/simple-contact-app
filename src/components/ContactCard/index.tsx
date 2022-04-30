@@ -2,9 +2,7 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
 import {
-    Box,
     Card,
-    CardActions,
     CardContent,
     Button,
     Typography
@@ -14,7 +12,7 @@ import { Contact } from '../../common/interfaces'
 
 const ContactCard: FC<Contact> = ({ _id, firstName, lastName, email, phone }): JSX.Element => {
     return (
-        <Card sx={{ minWidth: 275 }}>
+        <Card sx={{ height: 180 }}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     {phone}
@@ -25,8 +23,6 @@ const ContactCard: FC<Contact> = ({ _id, firstName, lastName, email, phone }): J
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {email}
                 </Typography>
-            </CardContent>
-            <CardActions>
                 <Button
                     size="small"
                     component={Link}
@@ -34,7 +30,7 @@ const ContactCard: FC<Contact> = ({ _id, firstName, lastName, email, phone }): J
                 >
                     View Contact
                 </Button>
-            </CardActions>
+            </CardContent>
         </Card>
     )
 }

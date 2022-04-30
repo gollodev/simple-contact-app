@@ -20,7 +20,6 @@ const ContactList: FC = (): JSX.Element => {
     const dispatch = useAppDispatch()
     const { contacts, totalPages } = useAppSelector(state => state.contact)
 
-    console.log(contacts)
     useEffect(() => {
         dispatch(getContactsAction())
     }, [dispatch])
